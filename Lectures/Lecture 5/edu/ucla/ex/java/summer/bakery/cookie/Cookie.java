@@ -11,12 +11,16 @@ public abstract class Cookie {
     public String flavor_name;
     public Oven oven;
 
-    public Cookie(Ingredient new_ingredients, CookieCutter cutter){
+    public Cookie(Ingredient new_ingredients[], CookieCutter cutter){
         oven = Oven.singletonInstance();
         this.ingredients = new_ingredients;
         this.mix();
         this.shape = cutter.cut();
         this.bake();
+    }
+
+    public Cookie(){
+
     }
 
     public void mix() {
@@ -33,9 +37,13 @@ public abstract class Cookie {
     }
 
     public void bake(){
-        while(oven.temperature == 400)
-        {
-            Thread.sleep(50000);
+        while(oven.temperature == 400) {
+            try {
+                Thread.sleep(50000);
+            } catch (Exception e){
+
+            }
+
             if (oven.check()) {
                 break;
             }

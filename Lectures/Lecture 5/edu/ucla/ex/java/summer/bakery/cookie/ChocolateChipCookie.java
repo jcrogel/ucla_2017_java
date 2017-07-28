@@ -4,10 +4,11 @@ import edu.ucla.ex.java.summer.bakery.pantry.*;
 
 public class ChocolateChipCookie extends Cookie implements Chocolate{
     private Ingredient choc_chips[];
+    public String flavor_name = "ChocolateChip";
 
     public void mix() {
         super.mix();
-        int len = choc_chips.length + this.ingredients;
+        int len = choc_chips.length + this.ingredients.length;
         Ingredient[] new_ingredients = new Ingredient[len];
 
         // Add cookies to the end
@@ -22,4 +23,8 @@ public class ChocolateChipCookie extends Cookie implements Chocolate{
         }
     }
 
+
+    public boolean decorate(){
+        return true;
+    }
 }

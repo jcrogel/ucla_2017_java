@@ -12,13 +12,8 @@ public class CookieOrder{
         // Testing
         for (Cookie cookie : cookies)
         {
-            for (int i=0; i<cookie_order; i++){
-                String cookie_name = cookie_order[i];
-                if (cookie_name == cookie.flavor_name && cookie.getClass() instanceof Cookie){
-
-                    System.out.println(cookie.getClass().getName());
-                    break;
-                }
+            if (cookie instanceof Cookie) {
+                System.out.println(cookie.getClass().getName());
             }
         }
     }
